@@ -1,6 +1,6 @@
 const $=s=>document.querySelector(s);
 const cats=['كل المشاريع',...new Set(PROJECTS.map(p=>p.category))];
-const iconNames=['brain-circuit','kaaba','life-buoy','sprout','shopping-bag','route','bar-chart-3','database'];
+const iconNames=['brain-circuit','landmark','life-buoy','sprout','shopping-bag','route','bar-chart-3','database'];
 const hints=['ذكاء • حماية','حج • سفر','مفقود • طوارئ','زراعة • بيئة','تجارة • مزادات','نقل • خدمات','أعمال • تحليلات','بيانات • برمجيات'];
 const grid=$('#grid'),filters=$('#filters'),search=$('#search'),count=$('#count'),empty=$('#empty'),modal=$('#modal');
 let active='كل المشاريع';
