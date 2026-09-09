@@ -1,10 +1,424 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="مكتبة 90 فكرة مشروع تخرج موزعة على 8 مجالات تقنية."><meta name="theme-color" content="#fbfbf9"><title>مشاريع تخرج — اختر فكرتك</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"><script src="https://unpkg.com/lucide@latest"></script><link rel="stylesheet" href="styles-v2.css"></head><body>
-<header class="header" id="top"><div class="container nav"><a class="brand" href="#top" aria-label="مشاريع تخرج"><span class="brand-mark"><i></i><i></i><i></i></span><span class="brand-name">مشاريع تخرج<small>GRADUATION PROJECTS</small></span></a><nav class="desktop-nav"><a class="active" href="#top">الرئيسية</a><a href="#projects">المشاريع</a><a href="#categories">التصنيفات</a><a href="#contact">تواصل</a></nav><a class="nav-contact" href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener">تواصل <i data-lucide="arrow-up-left"></i></a><button class="mobile-menu" id="menu" aria-label="فتح القائمة"><i data-lucide="menu"></i></button></div></header>
-<main><section class="hero"><div class="container hero-grid"><div class="hero-copy reveal"><span class="eyebrow"><i></i> مكتبة أفكار لمشروعك القادم</span><h1>فكرة واضحة.<br><em>مشروع أقوى.</em></h1><p>90 فكرة تخرج في 8 مجالات. تصفّحها بسرعة، اختر ما يناسبك، وابدأ من نقطة أفضل.</p><div class="hero-actions"><a class="primary" href="#projects">استكشف المشاريع <i data-lucide="arrow-left"></i></a><a class="secondary" href="#categories">التصنيفات</a></div><div class="hero-meta"><span><b>90</b> فكرة</span><span><b>08</b> مجالات</span><span><b>01</b> هدف: مشروعك</span></div></div><div class="hero-art reveal" aria-label="هوية بصرية لمشاريع التخرج"><div class="art-label">PROJECT / 2026</div><div class="art-90">90</div><div class="art-caption"><span>IDEAS LIBRARY</span><strong>تبدأ الفكرة<br>هنا.</strong></div><div class="art-mark"><span></span><span></span><span></span></div><div class="art-note">اختَر · طوّر · نفّذ</div><div class="art-corner">GRADUATION<br>PROJECTS</div></div></div></section>
-<section class="quick-strip"><div class="container quick-inner"><span class="quick-title">ابحث عن فكرة</span><label class="quick-search"><i data-lucide="search"></i><input id="heroSearch" placeholder="اسم مشروع أو مجال..." autocomplete="off"><button id="heroSearchBtn">بحث</button></label><span class="quick-note">90 نتيجة جاهزة للتصفح</span></div></section>
-<section class="section categories" id="categories"><div class="container"><div class="section-top reveal"><div><span class="kicker">01 / المجالات</span><h2>اختر المجال.</h2></div><span class="section-note">8 مجالات<br>90 فكرة</span></div><div class="category-grid" id="categoryGrid"></div></div></section>
-<section class="section projects" id="projects"><div class="container"><div class="section-top reveal"><div><span class="kicker">02 / المكتبة</span><h2>الأفكار.</h2></div><span class="section-note">ابحث، صفِّ،<br>ثم افتح التفاصيل.</span></div><div class="project-toolbar"><label class="search"><i data-lucide="search"></i><input id="search" placeholder="ابحث في المشاريع..." autocomplete="off"></label><div class="filters" id="filters"></div></div><div class="result"><span id="count">90 مشروع</span><button id="clear">إعادة التصفية</button></div><div class="project-grid" id="grid"></div><div class="empty hidden" id="empty"><b>لم نجد ما تبحث عنه</b><span>جرّب كلمة مختلفة أو تصنيفًا آخر.</span></div></div></section>
-<section class="contact" id="contact"><div class="container"><div class="contact-card reveal"><div><span class="kicker light">03 / تواصل</span><h2>وجدت فكرتك؟</h2><p>تواصل مباشرة لمناقشة المشروع وتفاصيله.</p></div><a class="contact-button" href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener">تواصل عبر واتساب <i data-lucide="arrow-up-left"></i></a></div></div></section></main>
-<footer><div class="container footer"><a class="brand" href="#top"><span class="brand-mark"><i></i><i></i><i></i></span><span class="brand-name">مشاريع تخرج<small>GRADUATION PROJECTS</small></span></a><span>© <span id="year"></span> مشاريع تخرج</span><a href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener">+967 770 545 327</a></div></footer>
-<div class="modal hidden" id="modal"><div class="modal-panel"><button class="close" id="close" aria-label="إغلاق"><i data-lucide="x"></i></button><span class="modal-label" id="mcat"></span><span class="modal-id" id="mid"></span><h2 id="mtitle"></h2><p id="mdesc"></p><div class="info"><div><small>المجال</small><b id="mcat2"></b></div><div><small>رقم الفكرة</small><b id="mid2"></b></div></div><a id="mwa" class="primary full" target="_blank" rel="noopener">استفسر عن هذه الفكرة <i data-lucide="arrow-left"></i></a></div></div>
-<script src="projects.js"></script><script src="app.js"></script><script>lucide.createIcons();document.getElementById('year').textContent=new Date().getFullYear();</script></body></html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="منصة تفاعلية تضم 90 فكرة مشروع تخرج تقني معتمدة في 8 مجالات حديثة مع أدوات بحث وتصفية ومناقشة فورية.">
+  <meta property="og:title" content="مشاريع تخرج — اختر فكرتك">
+  <meta property="og:description" content="منصة تفاعلية تضم 90 فكرة مشروع تخرج تقني معتمدة في 8 مجالات حديثة مع أدوات بحث وتصفية ومناقشة فورية.">
+  <meta name="theme-color" content="#2563eb">
+  <title>مشاريع تخرج — اختر فكرتك</title>
+  
+  <!-- Modern Google Fonts: Tajawal (Arabic) + Outfit (Latin/Numbers) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Light Orbs for Smooth Depth -->
+  <div class="glow-orb orb-1" aria-hidden="true"></div>
+  <div class="glow-orb orb-2" aria-hidden="true"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrapper">
+      <!-- High-End Custom Brand Logo -->
+      <a class="brand-logo" href="#top" aria-label="الرئيسية - منصة مشاريع التخرج">
+        <img src="logo.svg" alt="شعار منصة مشاريع التخرج" class="brand-logo-img" width="42" height="42">
+        <div class="brand-text">
+          <span class="brand-title">مشاريع تخرج</span>
+          <span class="brand-subtitle">GRADUATION PROJECTS 2026</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-links" id="navLinks">
+        <a class="nav-link active" href="#top">الرئيسية</a>
+        <a class="nav-link" href="#categories">المجالات</a>
+        <a class="nav-link" href="#projects">بنك الأفكار</a>
+        <button class="nav-link nav-btn-fav" id="navFavoritesBtn" aria-label="عرض المفضلة">
+          <i data-lucide="bookmark"></i>
+          <span>المفضلة</span>
+          <span class="fav-count-pill" id="navFavBadge">0</span>
+        </button>
+      </nav>
+
+      <!-- CTA Contact & Actions -->
+      <div class="nav-actions">
+        <button class="random-idea-btn" id="randomIdeaBtn" title="اقترح فكرة عشوائية">
+          <i data-lucide="sparkles"></i>
+          <span class="d-none-sm">فكرة عشوائية</span>
+        </button>
+        <a class="whatsapp-cta" href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="استشارة عبر واتساب">
+          <span class="online-indicator"></span>
+          <i data-lucide="message-circle"></i>
+          <span>تواصل للمناقشة</span>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="فتح القائمة">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-drawer-header">
+        <span class="mobile-brand">تصفح القائمة</span>
+        <button class="mobile-close-btn" id="mobileCloseBtn"><i data-lucide="x"></i></button>
+      </div>
+      <a class="mobile-link" href="#top" onclick="closeMobileMenu()">الرئيسية</a>
+      <a class="mobile-link" href="#categories" onclick="closeMobileMenu()">المجالات التخصصية</a>
+      <a class="mobile-link" href="#projects" onclick="closeMobileMenu()">بنك الأفكار (90 فكرة)</a>
+      <button class="mobile-link mobile-fav-btn" id="mobileFavBtn">
+        <i data-lucide="bookmark"></i>
+        <span>أفكاري المفضلة</span>
+        <span class="fav-count-pill" id="mobileFavBadge">0</span>
+      </button>
+      <button class="mobile-random-btn" id="mobileRandomBtn">
+        <i data-lucide="sparkles"></i>
+        <span>اقترح فكرة عشوائية ملهمة</span>
+      </button>
+      <a class="mobile-wa-btn" href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener">
+        <i data-lucide="message-circle"></i>
+        <span>استشارة مباشرة عبر واتساب</span>
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section with Inspiring Graduation & Projects Background -->
+    <section class="hero-section" id="top">
+      <div class="hero-bg-layer"></div>
+      <div class="container hero-container">
+        
+        <!-- Hero Header Intro (Spacious & Clean) -->
+        <div class="hero-intro-header">
+          <h1 class="hero-title animate-fade-up">
+            اختر مشروع تخرجك
+            <span class="hero-highlight">بفكرة مبتكرة وجاهزة للتنفيذ</span>
+          </h1>
+
+          <p class="hero-description animate-fade-up delay-1">
+            أفكار تطبيقية موثقة في مختلف التخصصات التقنية مع خطط واضحة وقابلة للتطبيق العملي.
+          </p>
+
+          <!-- Quick Search & Actions -->
+          <div class="hero-search-bar animate-fade-up delay-2">
+            <div class="search-input-wrap">
+              <i data-lucide="search" class="search-icon"></i>
+              <input type="text" id="heroQuickSearch" placeholder="ابحث باسم المشروع أو التقنية (Python, AI, IoT)..." autocomplete="off">
+              <button type="button" id="heroClearBtn" class="clear-input-btn hidden" aria-label="مسح">
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+            <button type="button" class="btn-primary hero-search-trigger" id="heroSearchBtn">
+              <span>تصفح الأفكار</span>
+              <i data-lucide="arrow-down-left"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section-wrapper" id="categories">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="header-titles">
+            <h2 class="section-title">المجالات والتخصصات</h2>
+            <p class="section-subtitle">اختر التخصص للاطلاع على الأفكار والمشاريع المتوفرة</p>
+          </div>
+        </div>
+
+        <!-- 8 Dynamic Category Cards -->
+        <div class="categories-grid" id="categoryGrid">
+          <!-- Injected dynamically by app.js with icons and specific theme colors -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects Library Section -->
+    <section class="section-wrapper projects-section" id="projects">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="header-titles">
+            <h2 class="section-title">بنك الأفكار</h2>
+            <p class="section-subtitle">ابحث وتصفح 90 مشروعاً تقنياً مع تفاصيل التقنيات ومستوى الصعوبة</p>
+          </div>
+          
+          <div class="header-controls">
+            <!-- Reset Button -->
+            <button class="btn-ghost" id="resetFiltersBtn">
+              <i data-lucide="rotate-ccw"></i>
+              <span>إعادة ضبط</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sticky Floating Toolbar -->
+        <div class="sticky-filter-toolbar">
+          
+          <!-- Search Field -->
+          <div class="toolbar-search">
+            <i data-lucide="search" class="tb-search-icon"></i>
+            <input type="text" id="projectSearch" placeholder="ابحث في عناوين ووصف وتقنيات الأفكار..." autocomplete="off">
+            <button id="clearSearchBtn" class="tb-clear-btn hidden" aria-label="مسح البحث">
+              <i data-lucide="x"></i>
+            </button>
+          </div>
+
+          <!-- Quick Actions & View Controls -->
+          <div class="toolbar-actions">
+            <!-- Favorite filter toggle -->
+            <button class="filter-chip-fav" id="filterFavoritesOnly" aria-pressed="false">
+              <i data-lucide="bookmark"></i>
+              <span>المفضلة فقط</span>
+              <span class="fav-mini-count" id="favMiniCount">0</span>
+            </button>
+
+            <!-- Level / Difficulty Filter -->
+            <div class="select-wrapper">
+              <select id="levelFilter" aria-label="تصفية حسب المستوى">
+                <option value="all">كل المستويات</option>
+                <option value="سهل - متوسط">سهل - متوسط</option>
+                <option value="متوسط">متوسط</option>
+                <option value="متوسط - متقدم">متوسط - متقدم</option>
+                <option value="متقدم">متقدم</option>
+                <option value="متقدم جداً">متقدم جداً</option>
+              </select>
+              <i data-lucide="chevron-down" class="select-arrow"></i>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Horizontal Scrollable Category Filter Pills -->
+        <div class="category-pills-bar" id="categoryFilters">
+          <!-- Injected dynamically -->
+        </div>
+
+        <!-- Results Counter and Active Filter Feedback -->
+        <div class="results-meta-bar">
+          <div class="results-left">
+            <span class="results-count-text" id="resultsCount">يعرض 90 فكرة</span>
+            <span class="active-category-indicator" id="activeCategoryBadge">المجال: كل المشاريع</span>
+          </div>
+          <div class="results-right">
+            <button class="quick-random-link" id="exploreRandomBtn">
+              <i data-lucide="dices"></i>
+              <span>فكرة عشوائية ملهمة</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Projects Cards Grid -->
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Dynamic Project Cards Rendered by app.js -->
+        </div>
+
+        <!-- Empty State When No Results Match -->
+        <div class="empty-state-card hidden" id="emptyState">
+          <div class="empty-icon-circle">
+            <i data-lucide="search-x"></i>
+          </div>
+          <h3>لم نجد أي مشروع يطابق بحثك</h3>
+          <p>جرّب استخدام كلمات مفتاحية أخرى، أو قم بإعادة ضبط التصنيف لإظهار كافة الأفكار.</p>
+          <button class="btn-primary" id="emptyResetBtn">
+            <i data-lucide="rotate-ccw"></i>
+            <span>عرض كافة الـ 90 فكرة</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Modern Direct Contact Card -->
+    <section class="section-wrapper contact-section" id="contact">
+      <div class="container">
+        <div class="contact-banner">
+          <div class="contact-bg-pattern" aria-hidden="true"></div>
+          
+          <div class="contact-content">
+            <span class="contact-tag">
+              <i data-lucide="sparkles"></i>
+              استشارة تقنية مباشرة
+            </span>
+            <h2 class="contact-headline">تريد مناقشة فكرة مشروع تخرجك؟</h2>
+            <p class="contact-desc">
+              تواصل لمناقشة خطة التنفيذ، اختيار التقنيات الأنسب، وهندسة البرمجيات مع مهندس مختص.
+            </p>
+            <div class="contact-features">
+              <div class="cf-item"><i data-lucide="check"></i> تقييم الجدوى وتحديد النطاق</div>
+              <div class="cf-item"><i data-lucide="check"></i> اختيار التقنيات وقواعد البيانات</div>
+              <div class="cf-item"><i data-lucide="check"></i> الاستعداد لمناقشة لجنة التحكيم</div>
+            </div>
+          </div>
+
+          <div class="contact-cta-wrapper">
+            <a class="btn-whatsapp-large" href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener">
+              <i data-lucide="message-circle"></i>
+              <div>
+                <strong>ناقش مشروعك عبر واتساب</strong>
+                <span>+967 770 545 327</span>
+              </div>
+              <i data-lucide="arrow-left" class="btn-arrow-icon"></i>
+            </a>
+            <span class="wa-sub-note">متاح للرد والاستفسار طوال اليوم</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Polished Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      
+      <div class="footer-brand-col">
+        <div class="brand-logo footer-logo">
+          <img src="logo.svg" alt="شعار منصة مشاريع التخرج" class="brand-logo-img" width="38" height="38">
+          <div>
+            <span class="brand-title">مشاريع تخرج</span>
+            <span class="brand-subtitle">GRADUATION PROJECTS PLATFORM</span>
+          </div>
+        </div>
+        <p class="footer-bio">
+          المنصة الشاملة لأفكار مشاريع التخرج الرائدة في علوم الحاسب وهندسة البرمجيات والذكاء الاصطناعي.
+        </p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#top">الرئيسية</a></li>
+          <li><a href="#categories">المجالات الـ 8</a></li>
+          <li><a href="#projects">بنك المشاريع (90 فكرة)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-col">
+        <h4>التواصل المباشر</h4>
+        <p>استفسر عن أي فكرة أو ناقش إمكانية التطوير والتنفيذ:</p>
+        <a class="footer-wa-link" href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener">
+          <i data-lucide="phone"></i>
+          <span dir="ltr">+967 770 545 327</span>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>جميع الحقوق محفوظة © <span id="currentYear"></span> منصة مشاريع تخرج</span>
+        <span>صُمم بعناية لدعم طلاب كليات الحاسوب وتكنولوجيا المعلومات</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a class="floating-whatsapp" href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="تواصل فوري عبر واتساب" id="floatingWhatsapp">
+    <span class="float-pulse"></span>
+    <i data-lucide="message-circle"></i>
+    <span class="float-tooltip">ناقش فكرتك عبر واتساب</span>
+  </a>
+
+  <!-- Project Detail Modal -->
+  <div class="modal-overlay hidden" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-header-meta">
+          <span class="modal-category-badge" id="modalCategory">الذكاء الاصطناعي</span>
+          <span class="modal-id-badge" id="modalId">#01</span>
+        </div>
+        
+        <div class="modal-header-actions">
+          <button class="modal-btn-action" id="modalFavBtn" title="إضافة للمفضلة">
+            <i data-lucide="bookmark" id="modalFavIcon"></i>
+          </button>
+          <button class="modal-btn-action" id="modalCopyBtn" title="نسخ تفاصيل الفكرة">
+            <i data-lucide="copy"></i>
+          </button>
+          <button class="modal-close-btn" id="modalCloseBtn" aria-label="إغلاق النافذة">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <h2 class="modal-title" id="modalTitle">اسم المشروع</h2>
+        
+        <div class="modal-section">
+          <h3 class="modal-subheading">
+            <i data-lucide="align-right"></i>
+            نبذة ووصف الفكرة
+          </h3>
+          <p class="modal-description" id="modalDesc"></p>
+        </div>
+
+        <div class="modal-details-grid">
+          <div class="modal-detail-card">
+            <span class="md-label"><i data-lucide="git-branch"></i> المجال التخصصي</span>
+            <strong class="md-value" id="modalCatDetail">--</strong>
+          </div>
+          <div class="modal-detail-card">
+            <span class="md-label"><i data-lucide="gauge"></i> مستوى الصعوبة المقترح</span>
+            <strong class="md-value" id="modalLevelDetail">متوسط</strong>
+          </div>
+          <div class="modal-detail-card">
+            <span class="md-label"><i data-lucide="users"></i> حجم فريق العمل</span>
+            <strong class="md-value" id="modalTeamDetail">3 طلاب</strong>
+          </div>
+          <div class="modal-detail-card">
+            <span class="md-label"><i data-lucide="hash"></i> رقم المشروع</span>
+            <strong class="md-value" id="modalNumberDetail">#01</strong>
+          </div>
+        </div>
+
+        <div class="modal-section" id="modalTagsSection">
+          <h3 class="modal-subheading">
+            <i data-lucide="code"></i>
+            التقنيات والمكتبات المقترحة للتنفيذ
+          </h3>
+          <div class="modal-tags-container" id="modalTags">
+            <!-- Injected dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <a class="btn-whatsapp-modal" id="modalWhatsappLink" target="_blank" rel="noopener">
+          <i data-lucide="message-circle"></i>
+          <span>استفسر وناقش هذا المشروع عبر واتساب</span>
+          <i data-lucide="arrow-left"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Application Scripts -->
+  <script src="projects.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

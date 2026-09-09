@@ -1,0 +1,8 @@
+{
+  "name": "مشاريع تخرج — اختر فكرتك",
+  "description": "منصة تفاعلية تضم 90 فكرة مشروع تخرج تقني معتمدة في 8 مجالات حديثة مع أدوات بحث وتصفية ومناقشة فورية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
