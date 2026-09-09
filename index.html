@@ -1,85 +1,10 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="منصة أفكار مشاريع التخرج — اكتشف فكرة مشروعك من مكتبة تقنية منظمة.">
-<meta name="theme-color" content="#f7f8f6">
-<title>مشاريع تخرج — فكرة تستحق التنفيذ</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
-<header class="header" id="top">
-  <div class="container nav">
-    <a class="brand" href="#top" aria-label="مشاريع تخرج">
-      <span class="brand-mark"><span></span><span></span><span></span></span>
-      <span class="brand-name">مشاريع تخرج<small>GRADUATION PROJECTS</small></span>
-    </a>
-    <nav class="desktop-nav" aria-label="التنقل">
-      <a class="active" href="#top">الرئيسية</a><a href="#projects">المشاريع</a><a href="#categories">التصنيفات</a><a href="#contact">تواصل</a>
-    </nav>
-    <a class="nav-contact" href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener">واتساب <i data-lucide="arrow-up-left"></i></a>
-    <button class="mobile-menu" id="menu" aria-label="فتح القائمة"><i data-lucide="menu"></i></button>
-  </div>
-</header>
-
-<main>
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy reveal">
-      <div class="eyebrow"><span></span> مكتبة أفكار مختارة</div>
-      <h1>لا تبدأ من<br><em>صفحة فارغة.</em></h1>
-      <p>90 فكرة مشروع تخرج مرتبة حسب المجال، لتجد الفكرة المناسبة وتنتقل مباشرة إلى تفاصيلها.</p>
-      <div class="hero-actions">
-        <a class="primary" href="#projects">استكشف الأفكار <i data-lucide="arrow-left"></i></a>
-        <a class="secondary" href="#categories">التصنيفات</a>
-      </div>
-      <div class="hero-meta"><span><b>90</b> فكرة</span><span><b>8</b> مجالات</span><span><b>∞</b> احتمالات</span></div>
-    </div>
-
-    <div class="hero-stage reveal" aria-hidden="true">
-      <div class="stage-label"><span></span> PROJECT INDEX <b>2026</b></div>
-      <div class="index-number">90</div>
-      <div class="index-copy"><strong>فكرة جاهزة<br>لتصبح مشروعًا.</strong><span>استكشف. اختر. نفّذ.</span></div>
-      <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-      <div class="idea-dot dot-a"></div><div class="idea-dot dot-b"></div><div class="idea-dot dot-c"></div>
-      <div class="project-mini mini-one"><span class="mini-icon"><i data-lucide="brain-circuit"></i></span><div><b>ذكاء اصطناعي</b><small>حلول ذكية</small></div></div>
-      <div class="project-mini mini-two"><span class="mini-icon"><i data-lucide="shield-check"></i></span><div><b>أمن سيبراني</b><small>حماية وبيانات</small></div></div>
-      <div class="project-mini mini-three"><span class="mini-icon"><i data-lucide="sprout"></i></span><div><b>تقنية وزراعة</b><small>أنظمة ذكية</small></div></div>
-      <div class="stage-line"></div>
-    </div>
-  </div>
-</section>
-
-<section class="quick-strip"><div class="container quick-inner"><span>ابحث عن فكرتك</span><div class="quick-search"><i data-lucide="search"></i><input id="heroSearch" placeholder="اسم مشروع، مجال، تقنية..." autocomplete="off"><button id="heroSearchBtn">بحث</button></div><span class="quick-note">تصفح أسرع، بدون تعقيد</span></div></section>
-
-<section class="section categories" id="categories">
-  <div class="container">
-    <div class="section-top reveal"><div><span class="kicker">01 / المجالات</span><h2>اختر مسارك.</h2></div><span class="section-note">ثمانية مجالات<br>في نظرة واحدة</span></div>
-    <div class="category-grid" id="categoryGrid"></div>
-  </div>
-</section>
-
-<section class="section projects" id="projects">
-  <div class="container">
-    <div class="section-top reveal"><div><span class="kicker">02 / المكتبة</span><h2>الأفكار.</h2></div><span class="section-note">ابحث أو صفِّ<br>ثم افتح التفاصيل</span></div>
-    <div class="project-toolbar"><label class="search"><i data-lucide="search"></i><input id="search" placeholder="ابحث في المشاريع..." autocomplete="off"></label><div class="filters" id="filters"></div></div>
-    <div class="result"><span id="count">90 مشروع</span><button id="clear">إعادة التصفية</button></div>
-    <div class="project-grid" id="grid"></div>
-    <div class="empty hidden" id="empty"><b>لم نجد ما تبحث عنه</b><span>جرّب كلمة مختلفة.</span></div>
-  </div>
-</section>
-
-<section class="contact" id="contact"><div class="container"><div class="contact-card reveal"><div><span class="kicker light">03 / تواصل</span><h2>عندك فكرة؟<br>خلّنا نطوّرها.</h2></div><a class="contact-button" href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener">تواصل عبر واتساب <i data-lucide="arrow-up-left"></i></a></div></div></section>
-</main>
-
-<footer><div class="container footer"><a class="brand" href="#top"><span class="brand-mark"><span></span><span></span><span></span></span><span class="brand-name">مشاريع تخرج<small>GRADUATION PROJECTS</small></span></a><span>© <span id="year"></span> مشاريع تخرج</span><a href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener">+967 770 545 327</a></div></footer>
-
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="مكتبة 90 فكرة مشروع تخرج موزعة على 8 مجالات تقنية."><meta name="theme-color" content="#fbfbf9"><title>مشاريع تخرج — اختر فكرتك</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"><script src="https://unpkg.com/lucide@latest"></script><link rel="stylesheet" href="styles.css"></head><body>
+<header class="header" id="top"><div class="container nav"><a class="brand" href="#top" aria-label="مشاريع تخرج"><span class="brand-mark"><i></i><i></i><i></i></span><span class="brand-name">مشاريع تخرج<small>GRADUATION PROJECTS</small></span></a><nav class="desktop-nav"><a class="active" href="#top">الرئيسية</a><a href="#projects">المشاريع</a><a href="#categories">التصنيفات</a><a href="#contact">تواصل</a></nav><a class="nav-contact" href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener">تواصل <i data-lucide="arrow-up-left"></i></a><button class="mobile-menu" id="menu" aria-label="فتح القائمة"><i data-lucide="menu"></i></button></div></header>
+<main><section class="hero"><div class="container hero-grid"><div class="hero-copy reveal"><span class="eyebrow"><i></i> مكتبة أفكار لمشروعك القادم</span><h1>فكرة واضحة.<br><em>مشروع أقوى.</em></h1><p>90 فكرة تخرج في 8 مجالات. تصفّحها بسرعة، اختر ما يناسبك، وابدأ من نقطة أفضل.</p><div class="hero-actions"><a class="primary" href="#projects">استكشف المشاريع <i data-lucide="arrow-left"></i></a><a class="secondary" href="#categories">التصنيفات</a></div><div class="hero-meta"><span><b>90</b> فكرة</span><span><b>08</b> مجالات</span><span><b>01</b> هدف: مشروعك</span></div></div><div class="hero-art reveal" aria-label="هوية بصرية لمشاريع التخرج"><div class="art-label">PROJECT / 2026</div><div class="art-90">90</div><div class="art-caption"><span>IDEAS LIBRARY</span><strong>تبدأ الفكرة<br>هنا.</strong></div><div class="art-mark"><span></span><span></span><span></span></div><div class="art-note">اختَر · طوّر · نفّذ</div><div class="art-corner">GRADUATION<br>PROJECTS</div></div></div></section>
+<section class="quick-strip"><div class="container quick-inner"><span class="quick-title">ابحث عن فكرة</span><label class="quick-search"><i data-lucide="search"></i><input id="heroSearch" placeholder="اسم مشروع أو مجال..." autocomplete="off"><button id="heroSearchBtn">بحث</button></label><span class="quick-note">90 نتيجة جاهزة للتصفح</span></div></section>
+<section class="section categories" id="categories"><div class="container"><div class="section-top reveal"><div><span class="kicker">01 / المجالات</span><h2>اختر المجال.</h2></div><span class="section-note">8 مجالات<br>90 فكرة</span></div><div class="category-grid" id="categoryGrid"></div></div></section>
+<section class="section projects" id="projects"><div class="container"><div class="section-top reveal"><div><span class="kicker">02 / المكتبة</span><h2>الأفكار.</h2></div><span class="section-note">ابحث، صفِّ،<br>ثم افتح التفاصيل.</span></div><div class="project-toolbar"><label class="search"><i data-lucide="search"></i><input id="search" placeholder="ابحث في المشاريع..." autocomplete="off"></label><div class="filters" id="filters"></div></div><div class="result"><span id="count">90 مشروع</span><button id="clear">إعادة التصفية</button></div><div class="project-grid" id="grid"></div><div class="empty hidden" id="empty"><b>لم نجد ما تبحث عنه</b><span>جرّب كلمة مختلفة أو تصنيفًا آخر.</span></div></div></section>
+<section class="contact" id="contact"><div class="container"><div class="contact-card reveal"><div><span class="kicker light">03 / تواصل</span><h2>وجدت فكرتك؟</h2><p>تواصل مباشرة لمناقشة المشروع وتفاصيله.</p></div><a class="contact-button" href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener">تواصل عبر واتساب <i data-lucide="arrow-up-left"></i></a></div></div></section></main>
+<footer><div class="container footer"><a class="brand" href="#top"><span class="brand-mark"><i></i><i></i><i></i></span><span class="brand-name">مشاريع تخرج<small>GRADUATION PROJECTS</small></span></a><span>© <span id="year"></span> مشاريع تخرج</span><a href="https://api.whatsapp.com/send/?phone=967770545327&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20a%20graduation%20project.&type=phone_number&app_absent=0" target="_blank" rel="noopener">+967 770 545 327</a></div></footer>
 <div class="modal hidden" id="modal"><div class="modal-panel"><button class="close" id="close" aria-label="إغلاق"><i data-lucide="x"></i></button><span class="modal-label" id="mcat"></span><span class="modal-id" id="mid"></span><h2 id="mtitle"></h2><p id="mdesc"></p><div class="info"><div><small>المجال</small><b id="mcat2"></b></div><div><small>رقم الفكرة</small><b id="mid2"></b></div></div><a id="mwa" class="primary full" target="_blank" rel="noopener">استفسر عن هذه الفكرة <i data-lucide="arrow-left"></i></a></div></div>
-<script src="projects.js"></script><script src="app.js"></script><script>lucide.createIcons();document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body></html>
+<script src="projects.js"></script><script src="app.js"></script><script>lucide.createIcons();document.getElementById('year').textContent=new Date().getFullYear();</script></body></html>
