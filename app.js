@@ -1,7 +1,40 @@
-const cats=['كل المشاريع',...new Set(PROJECTS.map(p=>p.category))];const icons=['✦','⌁','◉','♧','◇','↗','▦','⌘'];const hints=['AI • Security','Hajj • Travel','Missing • Emergency','AgriTech • Environment','Commerce • Auctions','Mobility • Fleet','Business • Analytics','Data • Software'];const $=s=>document.querySelector(s);const grid=$('#grid'),filters=$('#filters'),search=$('#search'),count=$('#count'),clear=$('#clear'),empty=$('#empty'),modal=$('#modal');let active='كل المشاريع';
-function categoryCards(){ $('#categoryGrid').innerHTML=cats.slice(1).map((c,i)=>`<button class="category-card" data-cat="${c}"><span class="cat-num">${String(i+1).padStart(2,'0')}</span><span class="cat-icon">${icons[i]}</span><h3>${c}</h3><span>${hints[i]}</span></button>`).join('');document.querySelectorAll('.category-card').forEach(x=>x.onclick=()=>{active=x.dataset.cat;renderFilters();render();$('#projects').scrollIntoView({behavior:'smooth'})}) }
-function renderFilters(){filters.innerHTML=cats.map(c=>`<button class="filter ${c===active?'active':''}" data-cat="${c}">${c}</button>`).join('');document.querySelectorAll('.filter').forEach(x=>x.onclick=()=>{active=x.dataset.cat;renderFilters();render()})}
-function list(){const q=search.value.trim().toLowerCase();return PROJECTS.filter(p=>(active==='كل المشاريع'||p.category===active)&&(!q||`${p.title} ${p.description} ${p.category}`.toLowerCase().includes(q)))}
-function render(){const data=list();count.textContent=`${data.length} مشروع`;clear.classList.toggle('hidden',!search.value);empty.classList.toggle('hidden',data.length>0);grid.innerHTML=data.map((p,i)=>`<article class="project-card" data-id="${p.id}" style="animation-delay:${Math.min(i*22,260)}ms"><div class="card-top"><span class="badge">${p.category}</span><span class="project-id">#${String(p.id).padStart(2,'0')}</span></div><h3>${p.title}</h3><p>${p.description}</p><div class="card-bottom"><span class="details">عرض التفاصيل</span><span class="arrow">←</span></div></article>`).join('');document.querySelectorAll('.project-card').forEach(x=>x.onclick=()=>openProject(+x.dataset.id))}
-function openProject(id){const p=PROJECTS.find(x=>x.id===id);if(!p)return;$('#mcat').textContent=p.category;$('#mid').textContent=`PROJECT #${String(p.id).padStart(2,'0')}`;$('#mtitle').textContent=p.title;$('#mdesc').textContent=p.description;$('#mcat2').textContent=p.category;$('#mid2').textContent=`#${String(p.id).padStart(2,'0')}`;$('#mwa').href=`https://api.whatsapp.com/send/?phone=967770545327&text=${encodeURIComponent('مرحباً، أريد الاستفسار عن مشروع التخرج رقم '+p.id+': '+p.title)}&type=phone_number&app_absent=0`;modal.classList.remove('hidden');document.body.style.overflow='hidden'}
-function close(){modal.classList.add('hidden');document.body.style.overflow=''}search.oninput=render;clear.onclick=()=>{search.value='';render();search.focus()};$('#close').onclick=close;modal.onclick=e=>{if(e.target===modal)close()};document.onkeydown=e=>{if(e.key==='Escape')close()};$('#year').textContent=new Date().getFullYear();$('#menu').onclick=()=>document.querySelector('.desktop-nav')?.classList.toggle('mobile-open');categoryCards();renderFilters();render();
+const $=s=>document.querySelector(s);
+const cats=['كل المشاريع',...new Set(PROJECTS.map(p=>p.category))];
+const icons=['✦','⌁','◈','◉','◇','↗','▦','⌘'];
+const hints=['AI • Security','Hajj • Travel','Missing • Events','AgriTech • Environment','Commerce • Auctions','Mobility • Transport','Business • Analytics','Data • Software'];
+const grid=$('#grid'),filters=$('#filters'),search=$('#search'),count=$('#count'),empty=$('#empty'),modal=$('#modal');
+let active='كل المشاريع';
+
+function categoryCards(){
+  $('#categoryGrid').innerHTML=cats.slice(1).map((c,i)=>`<button class="category-card" data-cat="${c}"><span class="cat-num">${String(i+1).padStart(2,'0')}</span><span class="cat-icon">${icons[i%icons.length]}</span><h3>${c}</h3><span>${hints[i]||'Technology'}</span></button>`).join('');
+  document.querySelectorAll('.category-card').forEach(x=>x.onclick=()=>{active=x.dataset.cat;renderFilters();render();$('#projects').scrollIntoView({behavior:'smooth'})});
+}
+function renderFilters(){
+  filters.innerHTML=cats.map(c=>`<button class="filter ${c===active?'active':''}" data-cat="${c}">${c}</button>`).join('');
+  document.querySelectorAll('.filter').forEach(x=>x.onclick=()=>{active=x.dataset.cat;renderFilters();render()});
+}
+function list(){
+  const q=search.value.trim().toLowerCase();
+  return PROJECTS.filter(p=>(active==='كل المشاريع'||p.category===active)&&(!q||`${p.title} ${p.description} ${p.category}`.toLowerCase().includes(q)));
+}
+function render(){
+  const data=list();
+  count.textContent=`${data.length} مشروع`;
+  empty.classList.toggle('hidden',data.length>0);
+  grid.innerHTML=data.map((p,i)=>`<article class="project-card" data-id="${p.id}" style="animation-delay:${Math.min(i*18,240)}ms"><div class="card-top"><span class="badge">${p.category}</span><span class="project-id">#${String(p.id).padStart(2,'0')}</span></div><h3>${p.title}</h3><p>${p.description}</p><div class="card-bottom"><span class="details">عرض التفاصيل</span><span class="arrow">←</span></div></article>`).join('');
+  document.querySelectorAll('.project-card').forEach(x=>x.onclick=()=>openProject(+x.dataset.id));
+}
+function openProject(id){
+  const p=PROJECTS.find(x=>x.id===id);if(!p)return;
+  $('#mcat').textContent=p.category;$('#mid').textContent=`PROJECT #${String(p.id).padStart(2,'0')}`;$('#mtitle').textContent=p.title;$('#mdesc').textContent=p.description;$('#mcat2').textContent=p.category;$('#mid2').textContent=`#${String(p.id).padStart(2,'0')}`;
+  $('#mwa').href=`https://api.whatsapp.com/send/?phone=967770545327&text=${encodeURIComponent('مرحباً، أريد الاستفسار عن مشروع التخرج رقم '+p.id+': '+p.title)}&type=phone_number&app_absent=0`;
+  modal.classList.remove('hidden');document.body.style.overflow='hidden';
+}
+function closeModal(){modal.classList.add('hidden');document.body.style.overflow=''}
+search.oninput=render;
+$('#close').onclick=closeModal;
+modal.onclick=e=>{if(e.target===modal)closeModal()};
+document.onkeydown=e=>{if(e.key==='Escape')closeModal()};
+$('#year').textContent=new Date().getFullYear();
+$('#menu').onclick=()=>document.querySelector('.desktop-nav')?.classList.toggle('mobile-open');
+categoryCards();renderFilters();render();
